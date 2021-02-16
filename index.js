@@ -1,36 +1,14 @@
-const { ApolloServer } = require('apollo-server');
+const { ApolloServer, PubSub } = require('apollo-server');
 const gql =require ('graphql-tag');
 const mongoose = require('mongoose');
 
-const Post = require('./models/Post');
+const typeDefs = require('./graphql/typeDefs')
+const resolvers = require('./graphql/resolvers');
 const { MONGODB } = require ('./config.js');
 
+const pubsub = new PubSub();
 
-const typeDefs = gql `
-    type Post{
-        id: ID!,
-        body:String!,
-        created:String!,
-        username:String!
-    }
-    type Query{
-        getPosts: [Post]
-    }
-`
-
-const resolvers = {
-    Query: {
-        async getPosts(){
-            try{
-                const posts = await Post.find(); //if not called specifically, will show all
-                return posts
-            } catch(err){
-                throw new Error(err)
-            }
-        }
-    }
-    
-}
+const PORT = process.env.port || 5000;
 
 const server = new ApolloServer ({
     typeDefs: typeDefs,
@@ -40,10 +18,13 @@ const server = new ApolloServer ({
 mongoose.connect(MONGODB, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() =>{
         console.log('I sense a connection!')
-        return server.listen({ port: 5000 })
+        return server.listen({ port: PORT })
     })
         .then((res) =>{
             console.log(`Server running at ${res.url}`)
          
     })
+            .catch(err => {
+                console.error(err)
+            })
 
