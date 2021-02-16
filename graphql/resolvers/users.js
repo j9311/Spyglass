@@ -6,7 +6,7 @@ const {
   validateRegisterInput,
   validateLoginInput
 } = require('../../util/validators');
-const { SECRET_KEY } = require('../../config');
+const { HIDDENKEY } = require('../../config');
 const User = require('../../models/User');
 
 function generateToken(user) {
@@ -16,7 +16,7 @@ function generateToken(user) {
       email: user.email,
       username: user.username
     },
-    SECRET_KEY,
+    HIDDENKEY,
     { expiresIn: '1h' }
   );
 }
@@ -37,13 +37,13 @@ module.exports = {
         throw new UserInputError('User not found', { errors });
       }
 
-      const match = await bcrypt.compare(password, user.password);
+      const match = await bcrypt.compare(password, user.password);//hash password...dist token [bcrypt, jsonwebtoken]
       if (!match) {
-        errors.general = 'Wrong crendetials';
-        throw new UserInputError('Wrong crendetials', { errors });
+        errors.general = 'Credentials mismatch';
+        throw new UserInputError('Hmm..doesn`t look like you...', { errors });
       }
 
-      const token = generateToken(user);
+      const token = generateToken(user); //hash password...dist token [bcrypt, jsonwebtoken]
 
       return {
         ...user._doc,
@@ -57,7 +57,7 @@ module.exports = {
         registerInput: { username, email, password, confirmPassword }
       }
     ) {
-      // Validate user data
+      // data valid
       const { valid, errors } = validateRegisterInput(
         username,
         email,
@@ -67,16 +67,16 @@ module.exports = {
       if (!valid) {
         throw new UserInputError('Errors', { errors });
       }
-      // TODO: Make sure user doesnt already exist
+      //does user exist already?
       const user = await User.findOne({ username });
       if (user) {
         throw new UserInputError('Username is taken', {
           errors: {
-            username: 'This username is taken'
+            username: 'Username not available, +1 for creativity'
           }
         });
       }
-      // hash password and create an auth token
+      // hash$token
       password = await bcrypt.hash(password, 12);
 
       const newUser = new User({

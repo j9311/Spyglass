@@ -19,7 +19,7 @@ module.exports = {
         if (post) {
           return post;
         } else {
-          throw new Error('Post not found');
+          throw new Error('Peek not found');
         }
       } catch (err) {
         throw new Error(err);
@@ -29,6 +29,7 @@ module.exports = {
   Mutation: {
     async createPost(_, { body }, context) {
       const user = checkAuth(context);
+      console.log(user)
 
       if (body.trim() === '') {
         throw new Error('Post body must not be empty');
@@ -38,7 +39,7 @@ module.exports = {
         body,
         user: user.id,
         username: user.username,
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toISOString(),
       });
 
       const post = await newPost.save();
@@ -54,11 +55,11 @@ module.exports = {
 
       try {
         const post = await Post.findById(postId);
-        if (user.username === post.username) {
+        if (user.username === post.username) { //don't let anyone delete Your posts, check for auth
           await post.delete();
           return 'Post deleted successfully';
         } else {
-          throw new AuthenticationError('Action not allowed');
+          throw new AuthenticationError('Nice try!');
         }
       } catch (err) {
         throw new Error(err);
