@@ -39,7 +39,7 @@ function App() {
             placeholder='Search for coin by name'
           />
         </form>
-        <h1 className='popular-coins'>Coin List - Hourly Update</h1>
+        <p className='popular-coins'>Coin List - Hourly Update</p>
       </div>
       {filteredCoins.map(coin => {
         return (

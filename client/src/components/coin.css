@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    
+    color:white
   }
   
   .coin-row {
@@ -26,7 +26,9 @@
     width: 5em;
     margin-right:2em;
   }
-  
+  h1{
+      color: orangered
+  }
   .coin-symbol {
     text-transform: uppercase;
   }
@@ -46,7 +48,7 @@
   }
 
   .coin-percent {
-    font-size:2em; 
+    font-size:1.5em; 
    }
   
   .red {
@@ -65,8 +67,10 @@
   }
 
   .popular-coins{
-      font-size: 3em;
+      font-size: 2em;
       padding-bottom: 1em;
+      padding-top: 1em;
+      color: white
   }
 
   .coin-input {
@@ -84,23 +88,14 @@
     vertical-align:super;
 }
 
-h1 {
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
 
-.coin-marketcap {
-    font-size:1.5em; 
-   }
-
-   .coin-volume {
-    font-size:1.5em; 
-   }
    .coin-price {
-    font-size:1.6em; 
+    font-size:1.1em; 
    }
+
    .coin-symbol {
-    font-size:1.6em; 
+    font-size:1.1em; 
+    color: orangered
    }
   @media only screen and (min-width:750px){
     .coin-volume {
@@ -141,7 +136,7 @@ h1 {
           justify-content:space-between;
           font-size: 2em;
       }
-
+     
 
 
 

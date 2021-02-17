@@ -1,18 +1,18 @@
 body {
-    background-color: rgb(226, 222, 222);
+    background-color: rgb(39, 38, 63);
 }
 .page-title {
     display: block !important;
     text-align: center;
     font-size: 2rem;
     margin-top: 10px;
-   
+   color: white
   }
   
   .form-container {
     width: 400px;
     margin: auto;
-    background-color: rgb(160, 155, 155);
+    background-color: rgb(66, 65, 104);
   }
   
   .ui.teal.button:focus,
@@ -21,13 +21,14 @@ body {
     color: #333333;
 font-family: 'Lucida Console', Monaco, monospace;
   }
-
+  /*"red","orange","yellow","olive","green","teal","blue","violet","purple","pink","brown","grey","black"*/
   .spyglass{
     display:flex;
     justify-content: center;  
     flex-direction: row;
     width: 20vh;
     height: 15vh;
+    color:orangered
   }
 
   .spycont{
@@ -37,7 +38,8 @@ font-family: 'Lucida Console', Monaco, monospace;
   }
 
   .spytext{
-    color: #333333;
+    color: white;
 font-family: 'Lucida Console', Monaco, monospace;
 font-size: 3em;
   }
+
