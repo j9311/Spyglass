@@ -1,0 +1,148 @@
+.coin-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+  }
+  
+  .coin-row {
+    height: 5em;
+    border-bottom: 1px solid #d7d7d7;
+    width: 100%;
+  }
+  
+  .coin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 1em;
+    justify-items: center;
+    flex-direction: row;
+  }
+  
+  .coin img {
+    height: 5em;
+    width: 5em;
+    margin-right:2em;
+  }
+  
+  .coin-symbol {
+    text-transform: uppercase;
+  }
+  
+  .coin-tag {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size:1.3em;
+      padding-top:1em ;
+  }
+  .coin-data {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .coin-percent {
+    font-size:2em; 
+   }
+  
+  .red {
+    color: #f00606;
+  }
+  
+  .green {
+    color: #11d811;
+  }
+
+  .coin-search{
+      display: flex;
+      justify-content:center;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .popular-coins{
+      font-size: 3em;
+      padding-bottom: 1em;
+  }
+
+  .coin-input {
+      border-radius: 30px;
+      border: 2px solid var(--input-border);
+      background-color: rgb(202, 199, 199);
+      height: 3em;
+      width: 20em;
+      text-align: center;
+      font-size: 1.1em;
+  }
+
+  .usd {
+    font-size: .5em;
+    vertical-align:super;
+}
+
+h1 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.coin-marketcap {
+    font-size:1.5em; 
+   }
+
+   .coin-volume {
+    font-size:1.5em; 
+   }
+   .coin-price {
+    font-size:1.6em; 
+   }
+   .coin-symbol {
+    font-size:1.6em; 
+   }
+  @media only screen and (min-width:750px){
+    .coin-volume {
+       font-size:2em; 
+      }
+      .coin-marketcap {
+        font-size:2em; 
+       }
+
+       .coin-percent {
+        font-size:2em; 
+       }
+
+       .coin-symbol {
+        font-size:2em; 
+       }
+
+       .coin-price {
+        font-size:2em; 
+       }
+
+       .usd {
+           font-size: .5em;
+           vertical-align:super;
+       }
+
+       .coin img {
+        height: 5em;
+        width: 5em;
+        margin-right:2em;
+      }
+
+      .coin-data {
+        justify-content: space-between;
+      }
+
+      .coin {
+          justify-content:space-between;
+          font-size: 2em;
+      }
+
+
+
+
+  }
