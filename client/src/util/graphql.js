@@ -19,3 +19,21 @@ export const FETCH_POSTS_QUERY = gql`
     }
   }
 `;
+
+
+// export const FETCH_POST_QUERY = gql`
+//     query{
+//       getPost {
+//         postId
+//         body
+//         commentCount
+//         comments{
+//           id
+//           likeCount
+//         }
+//         likes{
+//           username
+//         }
+//       }
+//     }
+// `

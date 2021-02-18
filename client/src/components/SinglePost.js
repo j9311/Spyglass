@@ -11,11 +11,14 @@ import {
   Icon,
   Label
 } from 'semantic-ui-react';
+// import { FETCH_POST_QUERY } from '../util/graphql';
 
 import { AuthContext } from '../context/auth';
 import LikeButton from '../subcomponents/LikeButton';
 import DeleteButton from '../subcomponents/DeleteButton';
 import MyPopup from '../util/MyPopup';
+
+//LOOK BACK THROUGH TYPEDEFS TO ADD CREATEDAT ONCE FIXED IN MUTATIONS AND QUERIES
 
 function SinglePost(props) {
   const postId = props.match.params.postId;
@@ -25,12 +28,13 @@ function SinglePost(props) {
   const [comment, setComment] = useState('');
 
   const {
-    data: { getPost }
+    data: { getPost: post }
   } = useQuery(FETCH_POST_QUERY, {
     variables: {
       postId
     }
   });
+  console.log(post)
 
   const [submitComment] = useMutation(SUBMIT_COMMENT_MUTATION, {
     update() {
@@ -48,19 +52,18 @@ function SinglePost(props) {
   }
 
   let postMarkup;
-  if (!getPost) {
+  if (!post) {
     postMarkup = <p>Loading post..</p>;
   } else {
     const {
       id,
       body,
-      createdAt,
       username,
       comments,
       likes,
       likeCount,
       commentCount
-    } = getPost;
+    } = post;
 
     postMarkup = (
       <Grid>
@@ -76,7 +79,7 @@ function SinglePost(props) {
             <Card fluid>
               <Card.Content>
                 <Card.Header>{username}</Card.Header>
-                <Card.Meta>{moment(createdAt).fromNow()}</Card.Meta>
+                <Card.Meta>{moment(null).fromNow()}</Card.Meta>
                 <Card.Description>{body}</Card.Description>
               </Card.Content>
               <hr />
@@ -135,7 +138,7 @@ function SinglePost(props) {
                     <DeleteButton postId={id} commentId={comment.id} />
                   )}
                   <Card.Header>{comment.username}</Card.Header>
-                  <Card.Meta>{moment(comment.createdAt).fromNow()}</Card.Meta>
+                  <Card.Meta>{moment(comment.null).fromNow()}</Card.Meta>
                   <Card.Description>{comment.body}</Card.Description>
                 </Card.Content>
               </Card>
@@ -155,7 +158,6 @@ const SUBMIT_COMMENT_MUTATION = gql`
       comments {
         id
         body
-        createdAt
         username
       }
       commentCount
@@ -168,7 +170,6 @@ const FETCH_POST_QUERY = gql`
     getPost(postId: $postId) {
       id
       body
-      createdAt
       username
       likeCount
       likes {
@@ -178,7 +179,6 @@ const FETCH_POST_QUERY = gql`
       comments {
         id
         username
-        createdAt
         body
       }
     }

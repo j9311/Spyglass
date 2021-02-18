@@ -38,7 +38,7 @@ function PostCard({
               {commentCount}
             </Label>
           </Button>
-        </MyPopup>
+          </MyPopup>
         {user && user.username === username && <DeleteButton postId={id} />}
       </Card.Content>
     </Card>
