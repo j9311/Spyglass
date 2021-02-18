@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    color:white
+    color:rgb(191, 253, 98)
   }
   
   .coin-row {
@@ -64,13 +64,15 @@
       justify-content:center;
       flex-direction: column;
       align-items: center;
+      
   }
 
   .popular-coins{
       font-size: 2em;
       padding-bottom: 1em;
       padding-top: 1em;
-      color: white
+      color: rgb(202, 199, 199);
+      text-decoration: wavy;
   }
 
   .coin-input {
@@ -81,6 +83,7 @@
       width: 20em;
       text-align: center;
       font-size: 1.1em;
+     
   }
 
   .usd {
