@@ -26,7 +26,7 @@ font-family: 'Lucida Console', Monaco, monospace;
     display:flex;
     justify-content: center;  
     flex-direction: row;
-    width: 20vh;
+    width: 17vh;
     height: 15vh;
     color:orangered
   }
@@ -42,4 +42,41 @@ font-family: 'Lucida Console', Monaco, monospace;
 font-family: 'Lucida Console', Monaco, monospace;
 font-size: 3em;
   }
+
+  .spytextSmall {
+    color: white;
+    font-family: 'Lucida Console', Monaco, monospace;
+    font-size: 1em;
+  }
+
+  .top{
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media only screen and (min-width:750px){
+    .top{
+      justify-content: center;
+    }
+    .spytext{
+      color: white;
+  font-family: 'Lucida Console', Monaco, monospace;
+  font-size: 10em;
+    }
+
+    .spytextSmall {
+      color: white;
+      font-family: 'Lucida Console', Monaco, monospace;
+      font-size: 2em;
+    }
+
+    .spyglass{
+      display:flex;
+      justify-content: center;  
+      flex-direction: row;
+      width: 27vh;
+      height: 27vh;
+      color:orangered
+    }
+ }
 

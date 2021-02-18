@@ -21,7 +21,10 @@ function App() {
     <AuthProvider>
       <Router>
         <Container> 
-          <div className="spycont"><GiSpyglass className="spyglass"/><h1 className="spytext">Spyglass</h1></div>
+          <div className="top">
+            <div className="spycont"><GiSpyglass className="spyglass"/></div>
+            <div ClassName="spy"><h1 className="spytext">Spyglass</h1><p className="spytextSmall">Put your mouth where your money is.</p></div>
+          </div>
           <MenuBar className="menu" />
           <Route exact path="/" component={Home} />
           <Route exact path="/coin" component={Coin} />
