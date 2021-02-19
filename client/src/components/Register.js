@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import {Form, Button} from "semantic-ui-react"
-import gql from 'graphql-tag'
-import { useMutation } from '@apollo/react-hooks'
+import React from 'react';
+// import {Form, Button} from "semantic-ui-react"
+// import gql from 'graphql-tag'
+// import { useMutation } from '@apollo/react-hooks'
 
 function Register() {
 
@@ -31,45 +31,45 @@ function Register() {
     //     e.preventDefault();
     //         addUser()
     // }
-    // return (
-    //     <div className="cont">
-        
-    //         <Form onSubmit={onSubmit} noValidate>
-    //         <h1>REGISTER</h1>
-    //         <Form.Input
-    //         label="Username"
-    //         placeholder="Username..."
-    //         name="username"
-    //         value={values.username}
-    //             onChange={onChange}
-    //         />
-    //         <Form.Input
-    //         label="Email"
-    //         placeholder="Email..."
-    //         name="email"
-    //         value={values.email}
-    //         onChange={onChange}
-    //         />
-    //         <Form.Input
-    //         label="Password"
-    //         placeholder="Password..."
-    //         name="password"
-    //         value={values.password}
-    //         onChange={onChange}
-    //         />
-    //         <Form.Input
-    //         label="Confirm Password"
-    //         placeholder="confirmPassword..."
-    //         name="confirmPassword"
-    //         value={values.confirmPassword}
-    //         onChange={onChange}
-    //         />
-    //         <Button type='submit' primary>
-    //             Register
-    //         </Button>
-    //         </Form>
-    //     </div>
-    // )
+    return (
+        <div className="cont">
+{/*         
+            <Form onSubmit={onSubmit} noValidate> */}
+            <h1>REGISTER</h1>
+            {/* <Form.Input
+            label="Username"
+            placeholder="Username..."
+            name="username"
+            value={values.username}
+                onChange={onChange}
+            />
+            <Form.Input
+            label="Email"
+            placeholder="Email..."
+            name="email"
+            value={values.email}
+            onChange={onChange}
+            />
+            <Form.Input
+            label="Password"
+            placeholder="Password..."
+            name="password"
+            value={values.password}
+            onChange={onChange}
+            />
+            <Form.Input
+            label="Confirm Password"
+            placeholder="confirmPassword..."
+            name="confirmPassword"
+            value={values.confirmPassword}
+            onChange={onChange}
+            />
+            <Button type='submit' primary>
+                Register
+            </Button>
+            </Form> */}
+        </div>
+    )
 }
 
 
