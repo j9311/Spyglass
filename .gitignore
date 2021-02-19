@@ -1,5 +1,4 @@
 node_modules
-config.js
 package-lock.json
 yarn.lock
 client/node_modules
