@@ -31,7 +31,8 @@ function SinglePost(props) {
     data: { getPost: post }
   } = useQuery(FETCH_POST_QUERY, {
     variables: {
-      postId
+      postId,
+      body: comment
     }
   });
   console.log(post)
@@ -43,8 +44,7 @@ function SinglePost(props) {
       commentInputRef.current.blur();
     },
     variables: {
-      postId,
-      body: comment
+      postId
     }
   });
 
