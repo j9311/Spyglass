@@ -35,6 +35,7 @@ function SinglePost(props) {
     }
   });
   console.log(post)
+  // console.log(body)
 
   const [submitComment] = useMutation(SUBMIT_COMMENT_MUTATION, {
     update() {
