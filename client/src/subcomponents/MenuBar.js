@@ -52,6 +52,7 @@ function MenuBar() {
           onClick={handleItemClick}
           as={Link}
           to="/register"
+          color="orange"//how to change color here?
         />
       </Menu.Menu>
     </Menu>
