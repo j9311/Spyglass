@@ -52,7 +52,7 @@ function Register(props) {
         />
         <Form.Input
           label="Email"
-          placeholder="Email"
+          placeholder="NOT SECURE, USE FAKE EMAIL!"
           name="email"
           type="email"
           value={values.email}
