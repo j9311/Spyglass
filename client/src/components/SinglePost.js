@@ -28,14 +28,14 @@ function SinglePost(props) {
   const [comment, setComment] = useState('');
 
   const {
-    data: { getPost: post }
+    data: { getPost: $post }
   } = useQuery(FETCH_POST_QUERY, {
     variables: {
       postId,
       body: comment
     }
   });
-  console.log(post)
+  console.log($post)
   // console.log(body)
 
   const [submitComment] = useMutation(SUBMIT_COMMENT_MUTATION, {
@@ -53,7 +53,7 @@ function SinglePost(props) {
   }
 
   let postMarkup;
-  if (!post) {
+  if (!$post) {
     postMarkup = <p>Loading post..</p>;
   } else {
     const {
@@ -64,14 +64,14 @@ function SinglePost(props) {
       likes,
       likeCount,
       commentCount
-    } = post;
+    } = $post;
 
     postMarkup = (
       <Grid>
         <Grid.Row>
           <Grid.Column width={2}>
             <Image
-              src="https://react.semantic-ui.com/images/avatar/large/molly.png"
+              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.3LpfiKPGScoTLLfgwKu2hgAAAA%26pid%3DApi&f=1"
               size="small"
               float="right"
             />
