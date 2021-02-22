@@ -36,14 +36,14 @@ function LikeButton({ user, post: { id, likeCount, likes } }) {
   );
 
   return (
-    // <Button >
-    <div>
+    <>
+    
       <Button as="div" labelPosition="right" onClick={likePost} content={liked ? 'Unlike' : 'Like'}>{likeButton}</Button>
       <Label basic color="orange">
         {likeCount}
       </Label>
-      </div>
-    /* </Button> */
+      
+    </>
   );
 }
 
