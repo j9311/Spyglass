@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Button, Form } from 'semantic-ui-react';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 
 import { AuthContext } from '../context/auth';
@@ -25,7 +25,7 @@ function Register(props) {
       }
     ) {
       context.login(userData);
-      props.history.push('/');
+      props.history.push('/coin');
     },
     onError(err) {
       setErrors(err.graphQLErrors[0].extensions.exception.errors);
@@ -43,7 +43,7 @@ function Register(props) {
         <h1>Register</h1>
         <Form.Input
           label="Username"
-          placeholder="Username.."
+          placeholder="Username"
           name="username"
           type="text"
           value={values.username}
@@ -52,7 +52,7 @@ function Register(props) {
         />
         <Form.Input
           label="Email"
-          placeholder="Email.."
+          placeholder="Email"
           name="email"
           type="email"
           value={values.email}
@@ -61,7 +61,7 @@ function Register(props) {
         />
         <Form.Input
           label="Password"
-          placeholder="Password.."
+          placeholder="Password"
           name="password"
           type="password"
           value={values.password}
@@ -70,14 +70,14 @@ function Register(props) {
         />
         <Form.Input
           label="Confirm Password"
-          placeholder="Confirm Password.."
+          placeholder="Confirm Password"
           name="confirmPassword"
           type="password"
           value={values.confirmPassword}
           error={errors.confirmPassword ? true : false}
           onChange={onChange}
         />
-        <Button type="submit" primary>
+        <Button type="submit" primary color="orange">
           Register
         </Button>
       </Form>
