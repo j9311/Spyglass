@@ -30,7 +30,6 @@ function PostForm() {
   return (
     <>
       <Form onSubmit={onSubmit}>
-        <h2>Create a post:</h2>
         <Form.Field>
           <Form.Input
             placeholder="Hi World!"
@@ -39,9 +38,12 @@ function PostForm() {
             value={values.body}
             error={error ? true : false}
           />
-          <Button type="submit" color="orange">
+          <Button className='button' type="submit" color="orange">
             Submit
           </Button>
+          <br/>
+          <br/>
+          <hr/>
         </Form.Field>
       </Form>
       {error && (

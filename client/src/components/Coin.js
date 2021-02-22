@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import '../App.css';
+import { AuthContext } from '../context/auth';
 import Coin from './coinage';
 
 function App() {
+  const { user } = useContext(AuthContext);
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState('');
 
