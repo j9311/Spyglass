@@ -26,16 +26,24 @@ function SinglePost(props) {
   const commentInputRef = useRef(null);
 
   const [comment, setComment] = useState('');
+let q = useQuery(FETCH_POST_QUERY, {
+  variables: {
+    postId,
+    body: comment
+  }
+});
 
-  const {
-    data: { getPost: $post }
-  } = useQuery(FETCH_POST_QUERY, {
-    variables: {
-      postId,
-      body: comment
-    }
-  });
-  console.log($post)
+console.log(q)
+let post = q?.data?.getPost
+  // const {
+  //   data: { getPost: post }
+  // } = useQuery(FETCH_POST_QUERY, {
+  //   variables: {
+  //     postId,
+  //     body: comment
+  //   }
+  // });
+  console.log(post)
   // console.log(body)
 
   const [submitComment] = useMutation(SUBMIT_COMMENT_MUTATION, {
@@ -44,7 +52,8 @@ function SinglePost(props) {
       commentInputRef.current.blur();
     },
     variables: {
-      postId
+      postId,
+      body: comment
     }
   });
 
@@ -53,7 +62,7 @@ function SinglePost(props) {
   }
 
   let postMarkup;
-  if (!$post) {
+  if (!post) {
     postMarkup = <p>Loading post..</p>;
   } else {
     const {
@@ -64,7 +73,7 @@ function SinglePost(props) {
       likes,
       likeCount,
       commentCount
-    } = $post;
+    } = post;
 
     postMarkup = (
       <Grid>
@@ -121,7 +130,7 @@ function SinglePost(props) {
                       />
                       <button
                         type="submit"
-                        className="ui button teal"
+                        className="ui button orange"
                         disabled={comment.trim() === ''}
                         onClick={submitComment}
                       >
@@ -156,6 +165,7 @@ const SUBMIT_COMMENT_MUTATION = gql`
   mutation($postId: String!, $body: String!) {
     createComment(postId: $postId, body: $body) {
       id
+      body
       comments {
         id
         body

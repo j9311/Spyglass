@@ -7,13 +7,13 @@ import { FETCH_POSTS_QUERY } from '../util/graphql';
 // import MyPopup from '../util/MyPopup';
 
 function DeleteButton({ postId, commentId, callback }) {
-  // const [confirmOpen, setConfirmOpen] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
   const mutation = commentId ? DELETE_COMMENT_MUTATION : DELETE_POST_MUTATION;
 
   const [deletePostOrMutation] = useMutation(mutation, {
     update(proxy) {
-      // setConfirmOpen(false);
+      setConfirmOpen(false);
       if (!commentId) {
         const data = proxy.readQuery({
           query: FETCH_POSTS_QUERY
@@ -34,22 +34,24 @@ function DeleteButton({ postId, commentId, callback }) {
           as="div"
           color="red"
           floated="right"
-          // onClick={() => setConfirmOpen(true)}
+          onClick={deletePostOrMutation}
         >
           <Icon name="trash" style={{ margin: 0 }} />
         </Button>
-      {/* <Confirm
+      <Confirm
         open={confirmOpen}
         onCancel={() => setConfirmOpen(false)}
         onConfirm={deletePostOrMutation}
-      /> */}
+      />
     </>
   );
 }
 
 const DELETE_POST_MUTATION = gql`
   mutation deletePost($postId: ID!) {
-    deletePost(postId: $postId)
+    deletePost(postId: $postId){
+      id
+    }
   }
 `;
 

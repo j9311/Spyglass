@@ -57,7 +57,7 @@ module.exports = {
         const post = await Post.findById(postId);
         if (user.username === post.username) { //don't let anyone delete Your posts, check for auth
           await post.delete();
-          return 'Post deleted successfully';
+          return post;
         } else {
           throw new AuthenticationError('Nice try!');
         }

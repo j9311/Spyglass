@@ -33,10 +33,10 @@ function PostCard({
       <Card.Content extra>
         <LikeButton user={user} post={{ id, likes, likeCount }} />
           <Button labelPosition="right" as={Link} to={`/posts/${id}`} onClick={commentOnPost}>
-            <Button color="blue">
+            <Button color="purple">
               <Icon name="comments" />
             </Button>
-            <Label basic color="blue" pointing="left">
+            <Label basic color="purple" pointing="left">
               {commentCount}
             </Label>
           </Button>
