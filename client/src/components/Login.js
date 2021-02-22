@@ -42,7 +42,7 @@ function Login(props) {
         <h1>Login</h1>
         <Form.Input
           label="Username"
-          placeholder="Username.."
+          placeholder="Username"
           name="username"
           type="text"
           value={values.username}
@@ -51,14 +51,14 @@ function Login(props) {
         />
         <Form.Input
           label="Password"
-          placeholder="Password.."
+          placeholder="Password"
           name="password"
           type="password"
           value={values.password}
           error={errors.password ? true : false}
           onChange={onChange}
         />
-        <Button type="submit" primary>
+        <Button type="submit" primary color="orange">
           Login
         </Button>
       </Form>
