@@ -1,19 +1,19 @@
 body {
-    background-color: rgb(39, 38, 63);
+    background-color: rgb(248, 248, 255);
 }
 .page-title {
     display: block !important;
     text-align: center;
     font-size: 2rem;
     margin-top: 10px;
-   color: white
+   color: rgb(88, 84, 84)
   }
   
   .form-container {
     width: 300px;
     margin: auto;
     background-color: rgbrgb(39, 38, 63);
-    COLOR: white
+    COLOR: rgb(82, 73, 73)
   }
   
   .ui.teal.button:focus,
@@ -60,13 +60,13 @@ font-size: 3em;
       justify-content: center;
     }
     .spytext{
-      color: white;
+      color: rgb(49, 46, 46);
   font-family: 'Lucida Console', Monaco, monospace;
   font-size: 10em;
     }
 
     .spytextSmall {
-      color: white;
+      color: rgb(124, 199, 94);
       font-family: 'Lucida Console', Monaco, monospace;
       font-size: 2em;
     }
@@ -77,7 +77,7 @@ font-size: 3em;
       flex-direction: row;
       width: 27vh;
       height: 27vh;
-      color:orangered
+      color:rgb(124, 199, 94)
     }
  }
 

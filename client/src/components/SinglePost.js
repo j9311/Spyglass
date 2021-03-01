@@ -95,7 +95,7 @@ let post = q?.data?.getPost
               <hr />
               <Card.Content extra>
                 <LikeButton user={user} post={{ id, likeCount, likes }} />
-                <MyPopup content="Comment on post">
+                {/* <MyPopup content="Comment on post"> */}
                   <Button
                     as="div"
                     labelPosition="right"
@@ -108,7 +108,7 @@ let post = q?.data?.getPost
                       {commentCount}
                     </Label>
                   </Button>
-                </MyPopup>
+                {/* </MyPopup> */}
                 {user && user.username === username && (
                   <DeleteButton postId={id} callback={deletePostCallback} />
                 )}
