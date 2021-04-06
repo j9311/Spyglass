@@ -23,7 +23,7 @@ function App() {
         <Container> 
           <div className="top">
             <div className="spycont"><GiSpyglass className="spyglass"/></div>
-            <div ClassName="spy"><h1 className="spytext">Spyglass</h1><p className="spytextSmall">Put your mouth where your money is.</p></div>
+            <div ClassName="spy"><h1 className="spytext">Spyglass</h1><p className="spytextSmall">Look up your favorite coins and post about them!</p></div>
           </div>
           <MenuBar className="menu" />
           <Route exact path="/" component={Home} />
