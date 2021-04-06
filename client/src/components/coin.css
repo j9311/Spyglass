@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    color:rgb(191, 253, 98)
+    color: rgb(109, 106, 106)
   }
   
   .coin-row {
@@ -71,7 +71,7 @@
       font-size: 2em;
       padding-bottom: 1em;
       padding-top: 1em;
-      color: rgb(202, 199, 199);
+      color: rgb(109, 106, 106);
       text-decoration: wavy;
   }
 
