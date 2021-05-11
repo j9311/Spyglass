@@ -16,6 +16,7 @@ import {
 import { AuthContext } from '../context/auth';
 import LikeButton from '../subcomponents/LikeButton';
 import DeleteButton from '../subcomponents/DeleteButton';
+import Identicon from 'react-identicons';
 // import MyPopup from '../util/MyPopup';
 
 //LOOK BACK THROUGH TYPEDEFS TO ADD CREATEDAT ONCE FIXED IN MUTATIONS AND QUERIES
@@ -79,17 +80,13 @@ let post = q?.data?.getPost
       <Grid>
         <Grid.Row>
           <Grid.Column width={2}>
-            <Image
-              src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.3LpfiKPGScoTLLfgwKu2hgAAAA%26pid%3DApi&f=1"
-              size="small"
-              float="right"
-            />
+          <Identicon string = {username} size="100" bg="black"/>
           </Grid.Column>
           <Grid.Column width={10}>
             <Card fluid>
               <Card.Content>
                 <Card.Header>{username}</Card.Header>
-                <Card.Meta>{moment(null).fromNow()}</Card.Meta>
+                {/* <Card.Meta>{moment(null).fromNow()}</Card.Meta> */}
                 <Card.Description>{body}</Card.Description>
               </Card.Content>
               <hr />
@@ -148,7 +145,7 @@ let post = q?.data?.getPost
                     <DeleteButton postId={id} commentId={comment.id} />
                   )}
                   <Card.Header>{comment.username}</Card.Header>
-                  <Card.Meta>{moment(comment.null).fromNow()}</Card.Meta>
+                  {/* <Card.Meta>{moment(comment.null).fromNow()}</Card.Meta> */}
                   <Card.Description>{comment.body}</Card.Description>
                 </Card.Content>
               </Card>

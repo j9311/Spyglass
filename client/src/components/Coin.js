@@ -33,15 +33,25 @@ function App() {
     <div className='coin-app'>
       <div className='coin-search'>
       <p className='popular-coins'>Coin List - Courtesy of Coin Gecko API</p>
-        <form>
+      <p className='popular-coinage'>Please refresh if list does not populate.</p>
+        {/* <form>
           <input
             className='coin-input'
             type='text'
             onChange={handleChange}
             placeholder='Search for coin by name'
           />
-        </form>
-        
+        </form> */}
+        <section class="webdesigntuts-workshop">
+	<form action="" method="">		    
+  <input
+            className='coin-input'
+            type='text'
+            onChange={handleChange}
+            placeholder='Search for coin by name'
+          />		    	
+	</form>
+</section>
       </div>
       <br></br>
       <hr></hr>

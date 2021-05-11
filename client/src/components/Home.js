@@ -17,17 +17,41 @@ function Posts() {
 
   return (
     <Grid className="grid" columns={1}>
-      <Grid.Row>
+      <Grid.Row only='large screen'>
         {user && (
           <Grid.Column>
             <PostForm />
           </Grid.Column>
         )}
         </Grid.Row>
-        <Grid.Row className="page-title">
+        <Grid.Row className="page-title" only='large screen'>
         <h1>Recent Posts</h1>
       </Grid.Row>
-        <Grid.Row columns={2}>
+        <Grid.Row columns={2} only='large screen'>
+        {loading ? (
+          <h1>LOADING.. please wait</h1>
+        ) : (
+          <Transition.Group>
+            {posts &&
+              posts.map((post) => (
+                <Grid.Column key={post.id} style={{ marginBottom: 15 }}>
+                  <PostCard post={post} />
+                </Grid.Column>
+              ))}
+          </Transition.Group>
+        )}
+      </Grid.Row>
+      <Grid.Row only='small screen'>
+        {user && (
+          <Grid.Column>
+            <PostForm />
+          </Grid.Column>
+        )}
+        </Grid.Row>
+        <Grid.Row className="page-title" only='small screen'>
+        <h1>Recent Posts</h1>
+      </Grid.Row>
+        <Grid.Row columns={1} only='small screen'>
         {loading ? (
           <h1>LOADING.. please wait</h1>
         ) : (
