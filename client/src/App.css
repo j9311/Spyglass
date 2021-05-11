@@ -1,34 +1,38 @@
 body {
-    background-color: rgb(248, 248, 255);
+    background-color: rgba(150, 147, 147, 0.123);
 }
+
+
 .page-title {
     display: block !important;
     text-align: center;
     font-size: 2rem;
     margin-top: 10px;
-   color: rgb(88, 84, 84)
+   color: green
   }
   
   .form-container {
     width: 300px;
     margin: auto;
     background-color: rgbrgb(39, 38, 63);
-    COLOR: rgb(82, 73, 73)
+    COLOR: rgb(245, 241, 241)
   }
   
   .ui.teal.button:focus,
   .ui.teal.buttons .button:focus {
     background-color: #00b5ad;
-    color: #333333;
+    color: #ebe1e1;
 font-family: 'Lucida Console', Monaco, monospace;
   }
   /*"red","orange","yellow","olive","green","teal","blue","violet","purple","pink","brown","grey","black"*/
+
+
   .spyglass{
     display:flex;
     justify-content: center;  
     flex-direction: row;
-    width: 17vh;
-    height: 15vh;
+    width: 15vh;
+    height: 10vh;
     color:orangered
   }
 
@@ -39,13 +43,16 @@ font-family: 'Lucida Console', Monaco, monospace;
   }
 
   .spytext{
-    color: white;
+    color: rgb(129, 130, 204);
 font-family: 'Lucida Console', Monaco, monospace;
 font-size: 3em;
   }
 
-  .spytextSmall {
+  .menu{
     color: white;
+  }
+  .spytextSmall {
+    color: rgb(129, 130, 204);
     font-family: 'Lucida Console', Monaco, monospace;
     font-size: 1em;
   }
@@ -60,13 +67,13 @@ font-size: 3em;
       justify-content: center;
     }
     .spytext{
-      color: rgb(49, 46, 46);
+      color: green;
   font-family: 'Lucida Console', Monaco, monospace;
   font-size: 10em;
     }
 
     .spytextSmall {
-      color: rgb(124, 199, 94);
+      color: green;
       font-family: 'Lucida Console', Monaco, monospace;
       font-size: 2em;
     }
@@ -75,8 +82,8 @@ font-size: 3em;
       display:flex;
       justify-content: center;  
       flex-direction: row;
-      width: 27vh;
-      height: 27vh;
+      width: 18vh;
+      height: 18vh;
       color:rgb(124, 199, 94)
     }
  }

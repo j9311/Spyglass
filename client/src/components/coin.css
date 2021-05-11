@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    color: rgb(109, 106, 106)
+    color: rgb(10, 10, 10)
   }
   
   .coin-row {
@@ -27,7 +27,7 @@
     margin-right:2em;
   }
   h1{
-      color: orangered
+      color: green
   }
   .coin-symbol {
     text-transform: uppercase;
@@ -71,14 +71,12 @@
       font-size: 2em;
       padding-bottom: 1em;
       padding-top: 1em;
-      color: rgb(109, 106, 106);
+      color: green;
       text-decoration: wavy;
   }
 
   .coin-input {
-      border-radius: 30px;
-      border: 2px solid var(--input-border);
-      background-color: rgb(202, 199, 199);
+      border-radius: 5px;
       height: 3em;
       width: 20em;
       text-align: center;
@@ -98,7 +96,7 @@
 
    .coin-symbol {
     font-size:1.1em; 
-    color: orangered
+    color: green
    }
   @media only screen and (min-width:750px){
     .coin-volume {
