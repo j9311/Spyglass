@@ -32,7 +32,7 @@ function App() {
   return (
     <div className='coin-app'>
       <div className='coin-search'>
-        
+      <p className='popular-coins'>Coin List - Courtesy of Coin Gecko API</p>
         <form>
           <input
             className='coin-input'
@@ -41,8 +41,10 @@ function App() {
             placeholder='Search for coin by name'
           />
         </form>
-        <p className='popular-coins'>Coin List - Hourly Update</p>
+        
       </div>
+      <br></br>
+      <hr></hr>
       {filteredCoins.map(coin => {
         return (
           <Coin

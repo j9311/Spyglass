@@ -7,7 +7,7 @@ import PostCard from '../subcomponents/PostCard';
 import PostForm from '../subcomponents/PostForm';
 import { FETCH_POSTS_QUERY } from '../util/graphql';
 
-function Home() {
+function Posts() {
   const { user } = useContext(AuthContext);
   const { loading, data: { getPosts: posts}={}} = useQuery(FETCH_POSTS_QUERY)
 
@@ -17,15 +17,17 @@ function Home() {
 
   return (
     <Grid className="grid" columns={1}>
-      <Grid.Row className="page-title">
-        <h1>Recent Peeks</h1>
-      </Grid.Row>
       <Grid.Row>
         {user && (
           <Grid.Column>
             <PostForm />
           </Grid.Column>
         )}
+        </Grid.Row>
+        <Grid.Row className="page-title">
+        <h1>Recent Posts</h1>
+      </Grid.Row>
+        <Grid.Row columns={2}>
         {loading ? (
           <h1>LOADING.. please wait</h1>
         ) : (
@@ -43,5 +45,5 @@ function Home() {
   );
 }
 
-export default Home;
+export default Posts;
 

@@ -39,7 +39,7 @@ function Login(props) {
   return (
     <div className="form-container">
       <Form onSubmit={onSubmit} noValidate className={loading ? 'loading' : ''}>
-        <h1>Login</h1>
+        <h1 class= 'delta'>Login</h1>
         <Form.Input
           label="Username"
           placeholder="Username"
@@ -58,7 +58,7 @@ function Login(props) {
           error={errors.password ? true : false}
           onChange={onChange}
         />
-        <Button type="submit" primarycolor="orange">
+        <Button type="submit" color="green">
           Login
         </Button>
       </Form>

@@ -52,7 +52,7 @@ function Register(props) {
         />
         <Form.Input
           label="Email"
-          placeholder="NOT SECURE, USE FAKE EMAIL!"
+          placeholder="Not encrypted, use fake email credential"
           name="email"
           type="email"
           value={values.email}
@@ -77,7 +77,7 @@ function Register(props) {
           error={errors.confirmPassword ? true : false}
           onChange={onChange}
         />
-        <Button type="submit" primarycolor="orange">
+        <Button type="submit" color="green">
           Register
         </Button>
       </Form>

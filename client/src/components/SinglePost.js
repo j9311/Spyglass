@@ -16,7 +16,7 @@ import {
 import { AuthContext } from '../context/auth';
 import LikeButton from '../subcomponents/LikeButton';
 import DeleteButton from '../subcomponents/DeleteButton';
-import MyPopup from '../util/MyPopup';
+// import MyPopup from '../util/MyPopup';
 
 //LOOK BACK THROUGH TYPEDEFS TO ADD CREATEDAT ONCE FIXED IN MUTATIONS AND QUERIES
 
