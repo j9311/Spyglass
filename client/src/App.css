@@ -7,7 +7,6 @@ body {
     display: block !important;
     text-align: center;
     font-size: 2rem;
-    margin-top: 10px;
    color: green
   }
   
@@ -33,7 +32,7 @@ font-family: 'Lucida Console', Monaco, monospace;
     flex-direction: row;
     width: 15vh;
     height: 10vh;
-    color:orangered
+    color:rgb(124, 199, 94)
   }
 
   .spycont{
@@ -43,7 +42,7 @@ font-family: 'Lucida Console', Monaco, monospace;
   }
 
   .spytext{
-    color: rgb(129, 130, 204);
+    color: green;
 font-family: 'Lucida Console', Monaco, monospace;
 font-size: 3em;
   }
@@ -52,7 +51,7 @@ font-size: 3em;
     color: white;
   }
   .spytextSmall {
-    color: rgb(129, 130, 204);
+    color: green;
     font-family: 'Lucida Console', Monaco, monospace;
     font-size: 1em;
   }
@@ -60,6 +59,7 @@ font-size: 3em;
   .top{
     display: flex;
     flex-direction: row;
+    margin-top: 1.5em;
   }
 
   @media only screen and (min-width:750px){

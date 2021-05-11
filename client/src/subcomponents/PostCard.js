@@ -6,6 +6,7 @@ import moment from 'moment';
 import { AuthContext } from '../context/auth';
 import LikeButton from './LikeButton';
 import DeleteButton from './DeleteButton';
+import Identicon from 'react-identicons';
 
 function PostCard({
   post: { body, createdAt, id, username, likeCount, commentCount, likes }
@@ -19,24 +20,27 @@ function PostCard({
   return (
     <Card fluid>
       <Card.Content>
+        <Identicon string = {username} size="50" bg="black"/>
         {/* <Image
           floated="right"
           size="mini"
           src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.3LpfiKPGScoTLLfgwKu2hgAAAA%26pid%3DApi&f=1"
         /> */}
         <Card.Header>{username}</Card.Header>
-        <Card.Meta as={Link} to={`/posts/${id}`}>
+        </Card.Content>
+        <Card.Content>
+        {/* <Card.Meta as={Link} to={`/posts/${id}`}>
           {moment(createdAt).fromNow(true)}
-        </Card.Meta>
+        </Card.Meta> */}
         <Card.Description>{body}</Card.Description>
       </Card.Content>
       <Card.Content extra>
         <LikeButton user={user} post={{ id, likes, likeCount }} />
           <Button labelPosition="right" as={Link} to={`/posts/${id}`} onClick={commentOnPost}>
-            <Button color="purple">
+            <Button color="blue">
               <Icon name="comments" />
             </Button>
-            <Label basic color="purple" pointing="left">
+            <Label basic color="blue" pointing="left">
               {commentCount}
             </Label>
           </Button>
