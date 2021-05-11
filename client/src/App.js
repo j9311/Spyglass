@@ -10,13 +10,14 @@ import { AuthProvider } from './context/auth';
 import AuthRoute from './util/AuthRoute';
 
 import MenuBar from './subcomponents/MenuBar';
-import Home from './components/Home';
+import Posts from './components/Home';
 import Coin from './components/Coin'
 import Login from './components/Login';
 import Register from './components/Register';
 import SinglePost from './components/SinglePost';
 
 function App() {
+  
   return (
     <AuthProvider>
       <Router>
@@ -26,7 +27,7 @@ function App() {
             <div ClassName="spy"><h1 className="spytext">Spyglass</h1><p className="spytextSmall">Look up your favorite coins and post about them!</p></div>
           </div>
           <MenuBar className="menu" />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Posts} />
           <Route exact path="/coin" component={Coin} />
           <AuthRoute exact path="/login" component={Login} />
           <AuthRoute exact path="/register" component={Register} />
