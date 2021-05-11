@@ -14,13 +14,14 @@ function MenuBar() {
   const handleItemClick = (e, { name }) => setActiveItem(name);
 
   const menuBar = user ? (
-    <Menu pointing secondary size="massive" color="orange">
+    <Menu pointing secondary size="massive" color="green">
       <Menu.Item 
         name={user.username} 
         active={activeItem === user.username} 
         onClick={handleItemClick} 
         as={Link} 
         to='/' 
+        
       />
       <Menu.Item
         name="coins"
@@ -34,10 +35,10 @@ function MenuBar() {
       </Menu.Menu>
     </Menu>
   ) : (
-    <Menu pointing secondary size="massive" color="orange">
+    <Menu pointing secondary size="massive" color="green">
       <Menu.Item
-        name="home"
-        active={activeItem === 'home'}
+        name="posts"
+        active={activeItem === 'posts'}
         onClick={handleItemClick}
         as={Link}
         to="/"
@@ -64,7 +65,6 @@ function MenuBar() {
           onClick={handleItemClick}
           as={Link}
           to="/register"
-          color="orange"//how to change color here?
         />
       </Menu.Menu>
     </Menu>

@@ -32,13 +32,13 @@ function PostForm() {
       <Form onSubmit={onSubmit}>
         <Form.Field>
           <Form.Input
-            placeholder="Hi World!"
+            placeholder="Write it and send it!"
             name="body"
             onChange={onChange}
             value={values.body}
             error={error ? true : false}
           />
-          <Button className='button' type="submit" color="orange">
+          <Button className='button' type="submit" color="green">
             Submit
           </Button>
           <br/>

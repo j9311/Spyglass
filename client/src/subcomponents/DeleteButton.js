@@ -38,11 +38,6 @@ function DeleteButton({ postId, commentId, callback }) {
         >
           <Icon name="trash" style={{ margin: 0 }} />
         </Button>
-      <Confirm
-        open={confirmOpen}
-        onCancel={() => setConfirmOpen(false)}
-        onConfirm={deletePostOrMutation}
-      />
     </>
   );
 }
