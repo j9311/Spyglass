@@ -17,17 +17,17 @@ function Posts() {
 
   return (
     <Grid className="grid" columns={1}>
-      <Grid.Row only='large screen'>
+      <Grid.Row >
         {user && (
           <Grid.Column>
             <PostForm />
           </Grid.Column>
         )}
         </Grid.Row>
-        <Grid.Row className="page-title" only='large screen'>
+        <Grid.Row className="page-title">
         <h1>Recent Posts</h1>
       </Grid.Row>
-        <Grid.Row columns={2} only='large screen'>
+        <Grid.Row columns={2}>
         {loading ? (
           <h1>LOADING.. please wait</h1>
         ) : (
@@ -41,7 +41,7 @@ function Posts() {
           </Transition.Group>
         )}
       </Grid.Row>
-      <Grid.Row only='small screen'>
+      {/* <Grid.Row only='small screen'>
         {user && (
           <Grid.Column>
             <PostForm />
@@ -64,7 +64,7 @@ function Posts() {
               ))}
           </Transition.Group>
         )}
-      </Grid.Row>
+      </Grid.Row> */}
     </Grid>
   );
 }
