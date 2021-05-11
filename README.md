@@ -1,13 +1,12 @@
 # Spyglass
 Spyglass -- Social Finance
 
+An app for searching crypto coin values, and posting/messaging with friends about them.
 
-Full stack app made in 7 days as class project:
 
-Features TBA:
-1. Fix delete post feature.
-2. Implement "Peek" system - Allow users to call 1day, 7day, 30day 'UP' or 'DOWN' calls on coins; display red or green on post to signify 'rightness'.
-3. New user pop-up
+Features request:
+1. Fix delete post feature (currently requires refresh for state to clear).
+2. Implement "Peek" system - Allow users to use Wei and Gwei to tip one another's posts.
 
 ## Try it here!
 <--- inherentmule.netlify.app --->
